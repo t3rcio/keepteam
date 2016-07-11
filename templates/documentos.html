@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+{% block 'content' %}
+{% for documento in documentos %}
+    <div class="page-title">
+        <span class="title">{{documento.nome}}</span>        
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <div class="title"> {{ documento.projeto.nome }}</div>                        
+                    </div>
+                    <div class="pull-right card-action">
+                        <div class="btn-group" role="group" aria-label="...">
+                            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#modalCardExample"><i class="fa fa-code"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="text-indent">
+                        {{documento.descricao}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}

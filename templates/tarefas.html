@@ -1,0 +1,41 @@
+{% extends 'index.html' %}
+{% block 'content' %}
+<div class="page-title">
+	<span class="title">Tarefas em execução</span>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="card-title">
+	<div class="title">Tarefas</div>
+</div>
+</div>
+<div class="card-body">
+<div class="col-sm-12">    
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Título</th>
+                <th>Responsável</th>
+                <th>Projeto</th>
+                <th>Status</th>
+                <th>Previsão</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for t in tarefas%}
+            <tr>
+                <th scope="row">{{t.pk}}</th>
+                <th>{{t.titulo}}</th>
+                <td>{{t.responsavel.nome}}</td>
+                <td>{{t.projeto.nome}}</td>
+                <td>{{t.status.nome}}</td>
+                <td>{{t.data_previsao}}</td>                
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+{%endblock%}
